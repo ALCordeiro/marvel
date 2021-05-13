@@ -45,6 +45,8 @@
         "arrow-parens": "off",
         "import/prefer-default-export": "off",
         "indent": "off",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "object-curly-newline": "off",
         "import/extensions": [
             "error",
             "ignorePackages",

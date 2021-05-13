@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { get } from '../../services/api';
 
-import { Container } from './styles';
+import { Container } from './index.style';
 
-interface ResponseData {
-    id: string;
-    name: string;
-    description: string;
-    thumbnail: {
-        path: string;
-        extension: string;
-    };
-}
+import { CardListComponent } from '../../components/CardList';
+import { ResponseData } from '../../interfaces/character.interface';
 
 const Characters: React.FC = () => {
     const [characters, setCharacters] = useState<ResponseData[]>([]);
@@ -23,8 +16,21 @@ const Characters: React.FC = () => {
             })
             .catch(err => console.log(err));
     }, []);
-    console.log('my characters', characters);
 
-    return <Container>Characters</Container>;
+    return (
+        <Container>
+            {/* <CardList>
+                {characters.map(character => (
+                    // <Card key={character.id}>
+                    //     <div id="img" />
+                    //     <h2>{character.name}</h2>
+                    //     <p>{character.description}</p>
+                    // </Card>
+                    <CardComponent character={character} />
+                ))}
+            </CardList> */}
+            <CardListComponent characters={characters} />
+        </Container>
+    );
 };
 export default Characters;
