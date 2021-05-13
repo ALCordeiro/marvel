@@ -42,6 +42,8 @@
         "react/jsx-one-expression-per-line": "off",
         "react/jsx-indent-props": "off",
         "react/jsx-indent": "off",
+        "arrow-parens": "off",
+        "import/prefer-default-export": "off",
         "indent": "off",
         "import/extensions": [
             "error",
