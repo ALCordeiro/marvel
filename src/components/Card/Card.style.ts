@@ -45,4 +45,8 @@ export const CardBody = styled.h1`
     font-weight: 400;
     padding: 40px 20px;
     font-size: 28px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;

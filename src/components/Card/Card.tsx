@@ -5,19 +5,14 @@ import { Card, CardAvatarContainer, CardAvatar, CardBody } from './Card.style';
 import { CharacterResponseData } from '../../interfaces/character.interface';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const CardComponent = ({ character }: CharacterResponseData) => {
-    console.log('CARD COMPONENT', console.log(character));
-
-    return (
-        <Card key={character.id}>
-            <CardAvatarContainer>
-                <CardAvatar thumbnail={character.thumbnail} />
-            </CardAvatarContainer>
-            <CardBody>{character.name}</CardBody>
-            {/* <p>{character.description}</p> */}
-        </Card>
-    );
-};
+export const CardComponent = ({ character }: CharacterResponseData) => (
+    <Card key={character.id}>
+        <CardAvatarContainer>
+            <CardAvatar thumbnail={character.thumbnail} />
+        </CardAvatarContainer>
+        <CardBody>{character.name}</CardBody>
+    </Card>
+);
 
 CardComponent.propTypes = {
     // eslint-disable-next-line react/require-default-props
