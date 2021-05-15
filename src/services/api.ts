@@ -19,4 +19,5 @@ const api = axios.create({
     },
 });
 
-export const get = (url: string, options?: any) => api.get(url, options);
+export const getCharacters = (url: string, options?: any) =>
+    api.get(url, options);
