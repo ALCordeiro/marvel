@@ -1,14 +1,13 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { getCharacters } from '../../../services/api';
-import { loadRequest, loadSuccess, loadFailure } from './actions';
+import { loadSuccess, loadFailure } from './actions';
 import { CharactersTypes } from './types';
 
-function* fetchSettlementListRequest({ payload }: any) {
+function* fetchSettlementListRequest() {
     try {
-        yield put(loadRequest());
         const {
             data: { characters },
-        } = yield call(getCharacters, payload);
+        } = yield call(getCharacters, '/characters');
 
         yield put(loadSuccess(characters));
     } catch (error) {

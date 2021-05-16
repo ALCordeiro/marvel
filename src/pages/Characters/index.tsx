@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container } from './index.style';
-import { loadRequest } from '../../store/ducks/characters/actions';
-import { getCharacters } from '../../services/api';
+import { loadSuccess } from '../../store/ducks/characters/actions';
+// import { getCharacters } from '../../services/api';
 import { CardListComponent } from '../../components/CardList';
 
 const Characters: React.FC = () => {
@@ -19,16 +19,7 @@ const Characters: React.FC = () => {
     // }, []);
 
     useEffect(() => {
-        console.log('loading', loading);
-        if (!loading) {
-            dispatch(loadRequest());
-            getCharacters('/characters')
-                .then(response => {
-                    // dispatch(loadSuccess(response.data.data.results));
-                    console.log(response);
-                })
-                .catch(err => console.log(err));
-        }
+        dispatch(loadSuccess(characters));
     }, [loading, characters, dispatch]);
 
     // const handleMoreCharacters = useCallback(async () => {
