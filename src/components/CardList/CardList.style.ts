@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
+export const CardList = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: center;
 `;

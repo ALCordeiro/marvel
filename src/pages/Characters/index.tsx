@@ -1,30 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { get } from '../../services/api';
-
-import { Container } from './styles';
-
-interface ResponseData {
-    id: string;
-    name: string;
-    description: string;
-    thumbnail: {
-        path: string;
-        extension: string;
-    };
-}
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useCallback, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Container, MoreCharactersContainer } from './index.style';
+import { loadRequest } from '../../store/ducks/characters/actions';
+import { CardListComponent } from '../../components/CardList';
+import { IRootState } from '../../interfaces/characters.interface';
+import { AddMoreCharactersComponent } from '../../components/AddMoreCharacters';
 
 const Characters: React.FC = () => {
-    const [characters, setCharacters] = useState<ResponseData[]>([]);
+    const { characters } = useSelector((state: IRootState) => state.characters);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        get('/characters')
-            .then(response => {
-                setCharacters(response.data.data.results);
-            })
-            .catch(err => console.log(err));
-    }, []);
-    console.log('my characters', characters);
+        dispatch(loadRequest());
+    }, [dispatch]);
 
-    return <Container>Characters</Container>;
+    const handleMoreCharacters = useCallback(async () => {
+        try {
+            const offset = characters.length;
+            dispatch(loadRequest(offset));
+
+            console.log('offset', offset);
+            // setCharacters([...characters, ...response.data.data.results]);
+        } catch (err) {
+            console.log(err);
+        }
+    }, [characters.length, dispatch]);
+
+    return (
+        <Container>
+            <CardListComponent characters={characters} />
+            <MoreCharactersContainer onClick={handleMoreCharacters}>
+                <AddMoreCharactersComponent />
+            </MoreCharactersContainer>
+        </Container>
+    );
 };
+
 export default Characters;

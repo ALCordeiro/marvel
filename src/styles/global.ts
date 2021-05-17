@@ -9,5 +9,6 @@ export default createGlobalStyle`
 
 
         font-family: 'Ubuntu', sans-serif;
+        color: #202020;
     }
 `;
