@@ -1,11 +1,16 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { action } from 'typesafe-actions';
-import { CharactersTypes, Character } from './types';
+import {
+    LOAD_CHARACTERS_REQUEST,
+    LOAD_CHARACTERS_SUCCESS,
+    LOAD_CHARACTERS_FAILURE,
+    Character,
+} from './types';
 
-export const loadRequest = () =>
-    action(CharactersTypes.LOAD_CHARACTERS_REQUEST);
+export const loadRequest = (offset?: any) =>
+    action(LOAD_CHARACTERS_REQUEST, offset);
 
 export const loadSuccess = (characters: Character[]) =>
-    action(CharactersTypes.LOAD_CHARACTERS_SUCCESS, characters);
+    action(LOAD_CHARACTERS_SUCCESS, characters);
 
-export const loadFailure = () =>
-    action(CharactersTypes.LOAD_CHARACTERS_FAILURE);
+export const loadFailure = () => action(LOAD_CHARACTERS_FAILURE);

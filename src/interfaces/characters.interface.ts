@@ -10,6 +10,7 @@ export interface ICharacters {
     stories: Stories;
     events: EventsOrComicsOrSeries;
     urls?: UrlsEntity[] | null;
+    length(): number;
 }
 
 export interface Thumbnail {

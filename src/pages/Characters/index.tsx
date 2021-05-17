@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Container } from './index.style';
+import { Container, MoreCharactersContainer } from './index.style';
 import { loadRequest } from '../../store/ducks/characters/actions';
 import { CardListComponent } from '../../components/CardList';
 import { IRootState } from '../../interfaces/characters.interface';
+import { AddMoreCharactersComponent } from '../../components/AddMoreCharacters';
 
 const Characters: React.FC = () => {
     const { characters } = useSelector((state: IRootState) => state.characters);
@@ -14,27 +15,24 @@ const Characters: React.FC = () => {
         dispatch(loadRequest());
     }, [dispatch]);
 
-    // const handleMoreCharacters = useCallback(async () => {
-    //     try {
-    //         const offset = this.characters.length;
-    //         const response = await get('/characters', {
-    //             params: {
-    //                 offset,
-    //             },
-    //         });
+    const handleMoreCharacters = useCallback(async () => {
+        try {
+            const offset = characters.length;
+            dispatch(loadRequest(offset));
 
-    //         setCharacters([...characters, ...response.data.data.results]);
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // }, [characters]);
+            console.log('offset', offset);
+            // setCharacters([...characters, ...response.data.data.results]);
+        } catch (err) {
+            console.log(err);
+        }
+    }, [characters.length, dispatch]);
 
     return (
         <Container>
             <CardListComponent characters={characters} />
-            {/* <MoreCharactersContainer onClick={handleMoreCharacters}>
+            <MoreCharactersContainer onClick={handleMoreCharacters}>
                 <AddMoreCharactersComponent />
-            </MoreCharactersContainer> */}
+            </MoreCharactersContainer>
         </Container>
     );
 };

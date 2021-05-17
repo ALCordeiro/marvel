@@ -1,5 +1,10 @@
 import { Reducer } from 'redux';
-import { CharactersState, CharactersTypes } from './types';
+import {
+    CharactersState,
+    LOAD_CHARACTERS_FAILURE,
+    LOAD_CHARACTERS_REQUEST,
+    LOAD_CHARACTERS_SUCCESS,
+} from './types';
 
 const INITIAL_STATE: CharactersState = {
     characters: [],
@@ -9,16 +14,16 @@ const INITIAL_STATE: CharactersState = {
 
 const reducer: Reducer<CharactersState> = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case CharactersTypes.LOAD_CHARACTERS_REQUEST:
+        case LOAD_CHARACTERS_REQUEST:
             return { ...state, loading: true };
-        case CharactersTypes.LOAD_CHARACTERS_SUCCESS:
+        case LOAD_CHARACTERS_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 error: false,
                 characters: action.payload,
             };
-        case CharactersTypes.LOAD_CHARACTERS_FAILURE:
+        case LOAD_CHARACTERS_FAILURE:
             return { ...state, loading: false, error: true, characters: [] };
         default:
             return state;
