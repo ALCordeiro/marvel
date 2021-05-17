@@ -2,29 +2,21 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container } from './index.style';
-import { loadSuccess } from '../../store/ducks/characters/actions';
-// import { getCharacters } from '../../services/api';
+import { loadRequest } from '../../store/ducks/characters/actions';
 import { CardListComponent } from '../../components/CardList';
+import { IRootState } from '../../interfaces/characters.interface';
 
 const Characters: React.FC = () => {
-    // const [characters, setCharacters] = useState('');
-    const { characters, loading } = useSelector(
-        (state: any) => state.characters,
-    );
+    const { characters } = useSelector((state: IRootState) => state.characters);
     const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     dispatch(fetchSettlementListRequest());
-    //     console.log(loading);
-    // }, []);
-
     useEffect(() => {
-        dispatch(loadSuccess(characters));
-    }, [loading, characters, dispatch]);
+        dispatch(loadRequest());
+    }, [dispatch]);
 
     // const handleMoreCharacters = useCallback(async () => {
     //     try {
-    //         const offset = characters.length;
+    //         const offset = this.characters.length;
     //         const response = await get('/characters', {
     //             params: {
     //                 offset,

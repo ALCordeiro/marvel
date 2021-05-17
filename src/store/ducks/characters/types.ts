@@ -3,9 +3,9 @@
  * Action Types
  */
 export enum CharactersTypes {
-    LOAD_CHARACTERS_REQUEST = '@characters/LOAD_REQUEST',
-    LOAD_CHARACTERS_SUCCESS = '@characters/LOAD_SUCCESS',
-    LOAD_CHARACTERS_FAILURE = '@characters/LOAD_FAILURE',
+    LOAD_CHARACTERS_REQUEST = '@characters/LOAD_CHARACTERS_REQUEST',
+    LOAD_CHARACTERS_SUCCESS = '@characters/LOAD_CHARACTERS_SUCCESS',
+    LOAD_CHARACTERS_FAILURE = '@characters/LOAD_CHARACTERS_FAILURE',
 }
 
 /**

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const AddMoreCharactersComponent = () => (
+export const AddMoreCharactersComponent: React.FC = () => (
     <svg
         aria-hidden="true"
         focusable="false"

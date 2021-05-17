@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { ICharacterCard2 } from '../../interfaces/characters.interface';
 import { Card, CardAvatarContainer, CardAvatar, CardBody } from './Card.style';
-import { CharacterResponseData } from '../../interfaces/character.interface';
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const CardComponent = ({ character }: CharacterResponseData) => (
+export const CardComponent: React.FC<ICharacterCard2> = ({
+    character,
+}: ICharacterCard2) => (
     <Card key={character.id}>
         <CardAvatarContainer>
             <CardAvatar thumbnail={character.thumbnail} />

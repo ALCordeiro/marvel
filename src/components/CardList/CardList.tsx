@@ -2,11 +2,16 @@ import React from 'react';
 
 import { CardList } from './CardList.style';
 import { CardComponent } from '../Card';
+import {
+    ICharacterCard,
+    ICharacters2,
+} from '../../interfaces/characters.interface';
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const CardListComponent = ({ characters }: any) => (
+export const CardListComponent: React.FC<ICharacters2> = ({
+    characters,
+}: any) => (
     <CardList>
-        {characters.map((character: any) => (
+        {characters.map((character: ICharacterCard) => (
             <CardComponent character={character} />
         ))}
     </CardList>
