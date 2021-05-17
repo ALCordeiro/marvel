@@ -21,7 +21,7 @@ const reducer: Reducer<CharactersState> = (state = INITIAL_STATE, action) => {
                 ...state,
                 loading: false,
                 error: false,
-                characters: action.payload,
+                characters: [...action.payload, ...state.characters],
             };
         case LOAD_CHARACTERS_FAILURE:
             return { ...state, loading: false, error: true, characters: [] };
