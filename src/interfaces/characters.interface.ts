@@ -12,6 +12,45 @@ export interface ICharacters {
     urls?: UrlsEntity[] | null;
     length(): number;
 }
+export interface ICharacterDetail {
+    character: {
+        name: string;
+        description: string;
+        comics: {
+            available: number;
+            items: [
+                {
+                    name: string;
+                },
+            ];
+        };
+        series: ComicsOrSeries;
+    };
+}
+
+export interface IState {
+    state: {
+        id: number;
+        name: string;
+        description: string;
+        comics: {
+            available: number;
+            items: [
+                {
+                    name: string;
+                },
+            ];
+        };
+        series: ComicsOrSeries;
+    };
+}
+
+export interface ComicsOrSeries {
+    available: number;
+    collectionURI: string;
+    items?: ItemsEntity[] | null;
+    returned: number;
+}
 
 export interface Thumbnail {
     path: string;

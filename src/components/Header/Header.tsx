@@ -14,7 +14,7 @@ export const HeaderComponent: React.FC = () => {
     const [search, setSearch] = useState('');
 
     function handleSearch() {
-        console.log('caiu no submit', search);
+        console.log('caiu no search', search);
     }
 
     return (

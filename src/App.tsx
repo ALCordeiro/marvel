@@ -1,14 +1,16 @@
 import React from 'react';
 
-import Characters from './pages/Characters';
+import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyles from './styles/global';
+import Routes from './Routes';
 
 const App: React.FunctionComponent = () => (
-    <>
-        <Characters />
+    <BrowserRouter>
+        {/* <Characters /> */}
+        <Routes />
         <GlobalStyles />
-    </>
+    </BrowserRouter>
 );
 
 export default App;

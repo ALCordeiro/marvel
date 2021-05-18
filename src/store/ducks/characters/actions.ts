@@ -7,7 +7,7 @@ import {
     Character,
 } from './types';
 
-export const loadRequest = (offset?: any) =>
+export const loadRequest = (offset?: () => number) =>
     action(LOAD_CHARACTERS_REQUEST, offset);
 
 export const loadSuccess = (characters: Character[]) =>
