@@ -23,7 +23,7 @@ export const TitleHeader = styled.h2`
     padding-bottom: 10px;
 `;
 
-export const SubtitleHeader = styled.h2`
+export const SubtitleHeader = styled.h3`
     font-size: 16px;
     color: gray;
     font-weight: 400;

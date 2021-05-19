@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  class="sc-bdnxRM iQMexA"
+>
+  <a
+    href="/details?id=1011334"
+    style="text-decoration: none;"
+  >
+    <div
+      class="sc-gtsrHT bVkflj"
+    >
+      <div
+        class="sc-dlnjwi dhkUjL"
+      >
+        <div
+          class="sc-hKFxyN idpmax"
+        />
+      </div>
+      <div
+        class="sc-eCApnc bKvsvX"
+      >
+        <h1
+          class="sc-jSFjdj dkaRHx"
+        >
+          3-D Man
+        </h1>
+      </div>
+    </div>
+  </a>
+</div>
+`;

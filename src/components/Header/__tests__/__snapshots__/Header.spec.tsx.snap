@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  class="sc-bdnxRM fGhsRl"
+>
+  <div
+    class="sc-gtsrHT bsaVBs"
+  >
+    <img
+      alt="marvel-logo"
+      src="http://localhost/assets/marvel-logo.png"
+    />
+  </div>
+  <h2
+    class="sc-dlnjwi cDcEdw"
+  >
+    Explore o Universo
+  </h2>
+  <h3
+    class="sc-hKFxyN kAroCE"
+  >
+    Mergulhe no domínio deslumbrante de todos os personagens que você ama - e aqueles que você descobrirá em breve!
+  </h3>
+  <div
+    class="sc-eCApnc cCPDbx"
+  >
+    <input
+      class="sc-jSFjdj eZWXu"
+      id="search-input-characters"
+      name="search"
+      placeholder="Procure por heróis"
+      type="text"
+    />
+    <input
+      class="sc-gKAaRy bwuAgQ"
+      type="button"
+      value=""
+    />
+  </div>
+</div>
+`;

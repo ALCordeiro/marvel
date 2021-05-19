@@ -10,7 +10,7 @@ const ts = Number(new Date());
 
 const hash = md5(ts + privateKey + apikey);
 
-const api = axios.create({
+export const instance = axios.create({
     baseURL: baseUrl,
     params: {
         ts,
@@ -19,4 +19,5 @@ const api = axios.create({
     },
 });
 
-export const getCharacters = (options?: any) => api.get('/characters', options);
+export const getCharacters = (options?: any) =>
+    instance.get('/characters', options);
