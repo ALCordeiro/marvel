@@ -5,6 +5,8 @@ import {
     LOAD_CHARACTERS_SUCCESS,
     LOAD_CHARACTERS_FAILURE,
     Character,
+    SEARCH_CHARACTERS_SUCCESS,
+    SEARCH_CHARACTERS_REQUEST,
 } from './types';
 
 export const loadRequest = (offset?: () => number) =>
@@ -14,3 +16,9 @@ export const loadSuccess = (characters: Character[]) =>
     action(LOAD_CHARACTERS_SUCCESS, characters);
 
 export const loadFailure = () => action(LOAD_CHARACTERS_FAILURE);
+
+export const searchCharactersSuccess = (characters: any) =>
+    action(SEARCH_CHARACTERS_SUCCESS, characters);
+
+export const searchCharactersRequest = (characters: any, search: string) =>
+    action(SEARCH_CHARACTERS_REQUEST, characters, search);

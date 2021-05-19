@@ -1,5 +1,7 @@
+/* eslint-disable function-paren-newline */
 import React, { useState } from 'react';
 
+import { useDispatch } from 'react-redux';
 import {
     HeaderContainer,
     LogoContainer,
@@ -9,12 +11,23 @@ import {
     SearchBoxContainer,
     SearchBoxCorner,
 } from './Header.style';
+import {
+    ICharacters2,
+    ICharacterMap,
+} from '../../interfaces/characters.interface';
+import { searchCharactersRequest } from '../../store/ducks/characters/actions';
 
-export const HeaderComponent: React.FC = () => {
+export const HeaderComponent: React.FC<ICharacters2> = ({
+    characters,
+}: ICharacters2) => {
     const [search, setSearch] = useState('');
+    const dispatch = useDispatch();
 
     function handleSearch() {
-        console.log('caiu no search', search);
+        const arrFiltered = characters.filter((el: ICharacterMap) =>
+            el.name.toLowerCase().includes(search.toLowerCase()),
+        );
+        dispatch(searchCharactersRequest(arrFiltered, search));
     }
 
     return (

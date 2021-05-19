@@ -27,7 +27,7 @@ const Characters: React.FC = () => {
 
     return (
         <Container>
-            <HeaderComponent />
+            <HeaderComponent characters={characters} />
             <CardListComponent characters={characters} />
             <MoreCharactersContainer onClick={handleMoreCharacters}>
                 <AddMoreCharactersComponent />

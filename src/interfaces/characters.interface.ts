@@ -11,6 +11,10 @@ export interface ICharacters {
     events: EventsOrComicsOrSeries;
     urls?: UrlsEntity[] | null;
     length(): number;
+    // eslint-disable-next-line no-unused-vars
+    map(p: any): (p: any) => any;
+    // eslint-disable-next-line no-unused-vars
+    filter(p: any): (p: any) => any;
 }
 export interface ICharacterDetail {
     character: {
@@ -118,4 +122,8 @@ export interface ComicsOrSeriesOrStoriesOrEvents {
 
 export interface ICharacterCard2 {
     character: ICharacterCard;
+}
+
+export interface ICharacterMap {
+    name: string;
 }

@@ -7,11 +7,10 @@ import {
     CharacterExtraInfos,
     CharacterSubtitle,
 } from './CharacterInfos.style';
-import { ICharacterDetail } from '../../interfaces/characters.interface';
-
-interface ICharacterComic {
-    name: string;
-}
+import {
+    ICharacterDetail,
+    ICharacterMap,
+} from '../../interfaces/characters.interface';
 
 export const CharacterInfosComponent: React.FC<ICharacterDetail> = ({
     character,
@@ -34,7 +33,7 @@ export const CharacterInfosComponent: React.FC<ICharacterDetail> = ({
                 {character.series ? character.series.available : dataNotFound}
             </CharacterExtraInfos>
             <CharacterSubtitle>Últimos lançamentos</CharacterSubtitle>
-            {character.comics.items.map((characterComics: ICharacterComic) => (
+            {character.comics.items.map((characterComics: ICharacterMap) => (
                 <p>{characterComics.name}</p>
             ))}
         </CharacterInfosContainer>
