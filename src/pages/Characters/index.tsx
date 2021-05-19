@@ -6,6 +6,7 @@ import { loadRequest } from '../../store/ducks/characters/actions';
 import { CardListComponent } from '../../components/CardList';
 import { IRootState } from '../../interfaces/characters.interface';
 import { AddMoreCharactersComponent } from '../../components/AddMoreCharacters';
+import { HeaderComponent } from '../../components/Header';
 
 const Characters: React.FC = () => {
     const { characters } = useSelector((state: IRootState) => state.characters);
@@ -19,9 +20,6 @@ const Characters: React.FC = () => {
         try {
             const offset = characters.length;
             dispatch(loadRequest(offset));
-
-            console.log('offset', offset);
-            // setCharacters([...characters, ...response.data.data.results]);
         } catch (err) {
             console.log(err);
         }
@@ -29,6 +27,7 @@ const Characters: React.FC = () => {
 
     return (
         <Container>
+            <HeaderComponent characters={characters} />
             <CardListComponent characters={characters} />
             <MoreCharactersContainer onClick={handleMoreCharacters}>
                 <AddMoreCharactersComponent />

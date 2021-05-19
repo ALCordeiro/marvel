@@ -9,10 +9,10 @@ import {
 
 export const CardListComponent: React.FC<ICharacters2> = ({
     characters,
-}: any) => (
+}: ICharacters2) => (
     <CardList>
         {characters.map((character: ICharacterCard) => (
-            <CardComponent character={character} />
+            <CardComponent character={character} key={character.id} />
         ))}
     </CardList>
 );
