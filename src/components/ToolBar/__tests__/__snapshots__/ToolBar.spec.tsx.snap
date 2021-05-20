@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  class="sc-bdnxRM fdHRjc"
+>
+  <div
+    class="sc-gtsrHT jTOMQt"
+  >
+    <p>
+      Encontrado(s) 
+      1
+       herói(s)
+    </p>
+  </div>
+  <div
+    class="sc-dlnjwi iUsAoZ"
+  >
+    <div
+      class="sc-hKFxyN bIItPl"
+    >
+      <img
+        alt="marvel-super-hero"
+        src="http://localhost/assets/super-hero.svg"
+      />
+      <p>
+        Ordenar por nome - A/Z
+      </p>
+      <label
+        class="sc-eCApnc diXFVk"
+        for="sorter"
+      >
+        <input
+          id="sorter"
+          type="checkbox"
+        />
+        <span
+          class="slider round"
+        />
+      </label>
+    </div>
+    <p>
+      test
+    </p>
+  </div>
+</div>
+`;

@@ -7,6 +7,8 @@ import {
     Character,
     SEARCH_CHARACTERS_SUCCESS,
     SEARCH_CHARACTERS_REQUEST,
+    SORT_CHARACTERS_SUCCESS,
+    SORT_CHARACTERS_REQUEST,
 } from './types';
 
 export const loadRequest = (offset?: () => number) =>
@@ -22,3 +24,9 @@ export const searchCharactersSuccess = (characters: any) =>
 
 export const searchCharactersRequest = (characters: any, search: string) =>
     action(SEARCH_CHARACTERS_REQUEST, characters, search);
+
+export const sortCharactersSuccess = (characters: any) =>
+    action(SORT_CHARACTERS_SUCCESS, characters);
+
+export const sortCharactersRequest = (characters: any) =>
+    action(SORT_CHARACTERS_REQUEST, characters);

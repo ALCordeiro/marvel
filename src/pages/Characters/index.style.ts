@@ -7,6 +7,7 @@ export const Container = styled.main`
     padding: 120px;
     border-bottom: 100px solid red;
     flex-direction: column;
+    min-height: 100vh;
 `;
 
 export const MoreCharactersContainer = styled.div`

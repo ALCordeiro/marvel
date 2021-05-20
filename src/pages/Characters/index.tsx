@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Container, MoreCharactersContainer } from './index.style';
 import { loadRequest } from '../../store/ducks/characters/actions';
 import { CardListComponent } from '../../components/CardList';
+import { ToolBarComponent } from '../../components/ToolBar';
 import { IRootState } from '../../interfaces/characters.interface';
 import { AddMoreCharactersComponent } from '../../components/AddMoreCharacters';
 import { HeaderComponent } from '../../components/Header';
@@ -28,6 +29,7 @@ const Characters: React.FC = () => {
     return (
         <Container>
             <HeaderComponent characters={characters} />
+            <ToolBarComponent characters={characters} />
             <CardListComponent characters={characters} />
             <MoreCharactersContainer onClick={handleMoreCharacters}>
                 <AddMoreCharactersComponent />
