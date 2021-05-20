@@ -4,6 +4,7 @@ import {
     loadFailure,
     loadRequest,
     loadSuccess,
+    resetCharacters,
     searchCharactersRequest,
     searchCharactersSuccess,
     sortCharactersRequest,
@@ -59,4 +60,11 @@ test('characters sort success', () => {
     expect(state.error).toBe(false);
     expect(state.characters).not.toStrictEqual([]);
     expect(state.characters).toStrictEqual(characters);
+});
+
+test('characters failure', () => {
+    const state = reducer(undefined, resetCharacters());
+    expect(state.loading).toBe(false);
+    expect(state.error).toBe(false);
+    expect(state.characters).toStrictEqual([]);
 });

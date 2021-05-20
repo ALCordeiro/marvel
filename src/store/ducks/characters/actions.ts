@@ -9,6 +9,7 @@ import {
     SEARCH_CHARACTERS_REQUEST,
     SORT_CHARACTERS_SUCCESS,
     SORT_CHARACTERS_REQUEST,
+    RESET_CHARACTERS,
 } from './types';
 
 export const loadRequest = (offset?: () => number) =>
@@ -18,6 +19,8 @@ export const loadSuccess = (characters: Character[]) =>
     action(LOAD_CHARACTERS_SUCCESS, characters);
 
 export const loadFailure = () => action(LOAD_CHARACTERS_FAILURE);
+
+export const resetCharacters = () => action(RESET_CHARACTERS);
 
 export const searchCharactersSuccess = (characters: any) =>
     action(SEARCH_CHARACTERS_SUCCESS, characters);
