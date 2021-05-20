@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export interface ICharacters {
     id: number;
     name: string;
@@ -11,10 +12,9 @@ export interface ICharacters {
     events: EventsOrComicsOrSeries;
     urls?: UrlsEntity[] | null;
     length(): number;
-    // eslint-disable-next-line no-unused-vars
     map(p: any): (p: any) => any;
-    // eslint-disable-next-line no-unused-vars
     filter(p: any): (p: any) => any;
+    sort(p: any): (p: any) => any;
 }
 export interface ICharacterDetail {
     character: {
@@ -94,7 +94,6 @@ export interface UrlsEntity {
 export interface IRootState {
     characters: { characters: ICharacters };
 }
-
 export interface ICharacters2 {
     characters: ICharacters;
 }
@@ -125,5 +124,40 @@ export interface ICharacterCard2 {
 }
 
 export interface ICharacterMap {
+    name: string;
+}
+
+export interface ISearchCharacter {
+    type: string;
+    payload?: PayloadEntity[] | null;
+    meta: string;
+}
+export interface PayloadEntity {
+    id: number;
+    name: string;
+    description: string;
+    modified: string;
+    thumbnail: Thumbnail;
+    resourceURI: string;
+    comics: ComicsOrSeriesOrEvents;
+    series: ComicsOrSeriesOrEvents;
+    stories: Stories;
+    events: Events;
+    urls?: UrlsEntity[] | null;
+}
+export interface ComicsOrSeriesOrEvents {
+    available: number;
+    collectionURI: string;
+    items?: ItemsEntity[] | null;
+    returned: number;
+}
+export interface Events {
+    available: number;
+    collectionURI: string;
+    items?: (ItemsEntity2 | null)[] | null;
+    returned: number;
+}
+export interface ItemsEntity2 {
+    resourceURI: string;
     name: string;
 }

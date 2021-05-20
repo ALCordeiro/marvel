@@ -1,8 +1,21 @@
 import { call, put } from 'redux-saga/effects';
 import * as Eff from 'redux-saga/effects';
 import { getCharacters } from '../../../services/api';
-import { loadSuccess, loadFailure, searchCharactersSuccess } from './actions';
-import { LOAD_CHARACTERS_REQUEST, SEARCH_CHARACTERS_REQUEST } from './types';
+import {
+    loadSuccess,
+    loadFailure,
+    searchCharactersSuccess,
+    sortCharactersSuccess,
+} from './actions';
+import {
+    LOAD_CHARACTERS_REQUEST,
+    SEARCH_CHARACTERS_REQUEST,
+    SORT_CHARACTERS_REQUEST,
+} from './types';
+import {
+    ICharacters2,
+    ISearchCharacter,
+} from '../../../interfaces/characters.interface';
 
 // eslint-disable-next-line prefer-destructuring
 const takeLatest: any = Eff.takeLatest;
@@ -23,16 +36,14 @@ function* fetchCharactersListRequest(offset: { payload: number }) {
     }
 }
 
-function* fetchSearchCharacters(characters: any): any {
+function* fetchSearchCharacters(characters: ISearchCharacter) {
     try {
-        console.log('character empty', characters);
         if (characters.meta === '') {
             const {
                 data: {
                     data: { results },
                 },
             } = yield call(getCharacters);
-            console.log('results', results);
             yield put(searchCharactersSuccess(results));
         } else {
             yield put(searchCharactersSuccess(characters));
@@ -42,7 +53,16 @@ function* fetchSearchCharacters(characters: any): any {
     }
 }
 
+function* fetchSortCharacters(characters: ICharacters2) {
+    try {
+        yield put(sortCharactersSuccess(characters));
+    } catch (error) {
+        yield put(loadFailure());
+    }
+}
+
 export const CharactersSaga = [
     takeLatest(LOAD_CHARACTERS_REQUEST, fetchCharactersListRequest),
     takeLatest(SEARCH_CHARACTERS_REQUEST, fetchSearchCharacters),
+    takeLatest(SORT_CHARACTERS_REQUEST, fetchSortCharacters),
 ];

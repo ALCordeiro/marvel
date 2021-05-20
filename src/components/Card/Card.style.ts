@@ -41,7 +41,7 @@ export const CardAvatar = styled.div`
     height: 375px;
     max-height: 375px;
     width: 100%;
-    background-size: cover;
+    background-size: contain;
     display: block;
     transition: all 1s;
 `;

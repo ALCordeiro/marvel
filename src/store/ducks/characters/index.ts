@@ -6,6 +6,8 @@ import {
     LOAD_CHARACTERS_SUCCESS,
     SEARCH_CHARACTERS_SUCCESS,
     SEARCH_CHARACTERS_REQUEST,
+    SORT_CHARACTERS_SUCCESS,
+    SORT_CHARACTERS_REQUEST,
 } from './types';
 
 const INITIAL_STATE: CharactersState = {
@@ -30,6 +32,14 @@ const reducer: Reducer<CharactersState> = (state = INITIAL_STATE, action) => {
         case SEARCH_CHARACTERS_REQUEST:
             return { ...state, loading: true };
         case SEARCH_CHARACTERS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                characters: action.payload.payload || action.payload,
+            };
+        case SORT_CHARACTERS_REQUEST:
+            return { ...state, loading: true };
+        case SORT_CHARACTERS_SUCCESS:
             return {
                 ...state,
                 loading: false,
