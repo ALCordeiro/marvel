@@ -14,7 +14,7 @@ export const CharacterName = styled.h1`
     padding-bottom: 20px;
 `;
 
-export const CharacterDescription = styled.h4`
+export const CharacterDescription = styled.h2`
     font-size: 16px;
     padding-bottom: 40px;
     font-weight: 400;
@@ -42,7 +42,7 @@ export const CharacterExtraInfosText = styled.p`
     font-weight: bold;
 `;
 
-export const CharacterExtraInfosTitle = styled.h4`
+export const CharacterExtraInfosTitle = styled.h3`
     font-size: 16px;
 `;
 

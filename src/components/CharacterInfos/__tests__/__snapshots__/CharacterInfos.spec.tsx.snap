@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  class="sc-bdnxRM ccnJNr"
+>
+  <div
+    class="sc-pNWdM hyWtTG"
+  >
+    <div
+      class="sc-jrsJWt QVpcv"
+    >
+      <h1
+        class="sc-gtsrHT djwUAP"
+      >
+        Rubick
+      </h1>
+      <h2
+        class="sc-dlnjwi hJOoTO"
+      >
+        The Grand magus
+      </h2>
+    </div>
+    <div
+      class="sc-kEqXSa bdRqqF"
+    />
+  </div>
+  <div
+    class="sc-hKFxyN fXgtiC"
+  >
+    <div
+      class="sc-eCApnc bYkoON"
+    >
+      <h3
+        class="sc-gKAaRy bBfxiC"
+      >
+        Quadrinhos
+      </h3>
+      <div
+        class="sc-iCoGMd gPvHje"
+      >
+        <img
+          alt="marvel-super-hero"
+          src="http://localhost/assets/comics-marvel.svg"
+        />
+        <p
+          class="sc-jSFjdj gZHEXm"
+        >
+          1
+        </p>
+      </div>
+    </div>
+    <div
+      class="sc-eCApnc bYkoON"
+    >
+      <h3
+        class="sc-gKAaRy bBfxiC"
+      >
+        Filmes
+      </h3>
+      <div
+        class="sc-iCoGMd gPvHje"
+      >
+        <img
+          alt="marvel-super-hero"
+          src="http://localhost/assets/video-marvel.svg"
+        />
+        <p
+          class="sc-jSFjdj gZHEXm"
+        >
+          1
+        </p>
+      </div>
+    </div>
+  </div>
+  <h4
+    class="sc-fujyAs hfORVz"
+  >
+    Últimos lançamentos
+  </h4>
+  <p>
+    The Granddd magus
+  </p>
+</div>
+`;
