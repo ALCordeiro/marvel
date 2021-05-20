@@ -1,13 +1,7 @@
 import styled from 'styled-components';
+import { IThumbnailImg } from '../../interfaces/characters.interface';
 
-interface Thumbnail {
-    thumbnail: {
-        path: string;
-        extension: string;
-    };
-}
-
-const urlImg = (props: Thumbnail) => `
+const urlImg = (props: IThumbnailImg) => `
     ${props.thumbnail.path}.${props.thumbnail.extension}`;
 
 export const Card = styled.div`

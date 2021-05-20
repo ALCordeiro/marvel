@@ -6,6 +6,13 @@ import {
     CharacterDescription,
     CharacterExtraInfos,
     CharacterSubtitle,
+    CharacterExtraInfosContainer,
+    CharacterExtraInfosTitle,
+    CharacterExtraInfosData,
+    CharacterExtraInfosText,
+    CharacterMainInfos,
+    CharacterMainTextInfos,
+    Avatar,
 } from './CharacterInfos.style';
 import {
     ICharacterDetail,
@@ -18,19 +25,50 @@ export const CharacterInfosComponent: React.FC<ICharacterDetail> = ({
     const dataNotFound = 'Dados não encontrados';
     return (
         <CharacterInfosContainer>
-            <CharacterName>{character.name}</CharacterName>
-            <CharacterDescription>
-                {character.description ? character.description : dataNotFound}
-            </CharacterDescription>
+            <CharacterMainInfos>
+                <CharacterMainTextInfos>
+                    <CharacterName>{character.name}</CharacterName>
+                    <CharacterDescription>
+                        {character.description
+                            ? character.description
+                            : dataNotFound}
+                    </CharacterDescription>
+                </CharacterMainTextInfos>
+                <Avatar thumbnail={character.thumbnail} />
+            </CharacterMainInfos>
+
             <CharacterExtraInfos>
-                Quadrinhos:{' '}
-                {character.comics && character.comics.available
-                    ? character.comics.available
-                    : dataNotFound}
-            </CharacterExtraInfos>
-            <CharacterExtraInfos>
-                Filmes:{' '}
-                {character.series ? character.series.available : dataNotFound}
+                <CharacterExtraInfosContainer>
+                    <CharacterExtraInfosTitle>
+                        Quadrinhos
+                    </CharacterExtraInfosTitle>
+                    <CharacterExtraInfosData>
+                        <img
+                            src={`${window.location.origin}/assets/comics-marvel.svg`}
+                            alt="marvel-super-hero"
+                        />
+                        <CharacterExtraInfosText>
+                            {character.comics && character.comics.available
+                                ? character.comics.available
+                                : dataNotFound}
+                        </CharacterExtraInfosText>
+                    </CharacterExtraInfosData>
+                </CharacterExtraInfosContainer>
+
+                <CharacterExtraInfosContainer>
+                    <CharacterExtraInfosTitle>Filmes</CharacterExtraInfosTitle>
+                    <CharacterExtraInfosData>
+                        <img
+                            src={`${window.location.origin}/assets/video-marvel.svg`}
+                            alt="marvel-super-hero"
+                        />
+                        <CharacterExtraInfosText>
+                            {character.comics && character.comics.available
+                                ? character.comics.available
+                                : dataNotFound}
+                        </CharacterExtraInfosText>
+                    </CharacterExtraInfosData>
+                </CharacterExtraInfosContainer>
             </CharacterExtraInfos>
             <CharacterSubtitle>Últimos lançamentos</CharacterSubtitle>
             {character.comics.items.map((characterComics: ICharacterMap) => (

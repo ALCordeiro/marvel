@@ -29,6 +29,7 @@ export interface ICharacterDetail {
             ];
         };
         series: ComicsOrSeries;
+        thumbnail: Thumbnail;
     };
 }
 
@@ -46,6 +47,14 @@ export interface IState {
             ];
         };
         series: ComicsOrSeries;
+        thumbnail: Thumbnail;
+    };
+}
+
+export interface IThumbnailImg {
+    thumbnail: {
+        path: string;
+        extension: string;
     };
 }
 
