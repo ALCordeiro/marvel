@@ -2,7 +2,7 @@
 
 exports[`should match snapshot 1`] = `
 <div
-  class="sc-bdnxRM fdHRjc"
+  class="sc-bdnxRM FgEcZ"
 >
   <div
     class="sc-gtsrHT jTOMQt"
@@ -39,9 +39,6 @@ exports[`should match snapshot 1`] = `
         />
       </label>
     </div>
-    <p>
-      test
-    </p>
   </div>
 </div>
 `;

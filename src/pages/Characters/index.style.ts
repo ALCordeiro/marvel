@@ -8,6 +8,10 @@ export const Container = styled.main`
     border-bottom: 100px solid red;
     flex-direction: column;
     min-height: 100vh;
+
+    @media (max-width: 800px) {
+        padding: 50px;
+    }
 `;
 
 export const MoreCharactersContainer = styled.div`

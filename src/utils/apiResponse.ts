@@ -42,3 +42,36 @@ export const characters: any = [
         filter: () => 'test',
     },
 ];
+
+export const character: any = {
+    state: {
+        id: 10,
+        name: 'Rubick',
+        description: 'The Grand magus',
+        comics: {
+            available: 1,
+            items: [
+                {
+                    name: 'The Granddd magus',
+                },
+            ],
+        },
+        series: {
+            available: 1,
+            collectionURI:
+                'http://gateway.marvel.com/v1/public/characters/1017100/series',
+            items: [
+                {
+                    name: 'FREE COMIC BOOK DAY 2013 1 (2013)',
+                    resourceURI:
+                        'http://gateway.marvel.com/v1/public/series/17765',
+                },
+            ],
+            returned: 1,
+        },
+        thumbnail: {
+            extension: 'jpg',
+            path: 'http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16',
+        },
+    },
+};

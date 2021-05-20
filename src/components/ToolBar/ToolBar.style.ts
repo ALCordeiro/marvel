@@ -6,6 +6,20 @@ export const ToolBarContainer = styled.div`
     padding: 25px 120px;
     height: 85px;
     align-items: center;
+    flex-direction: row;
+
+    @media (max-width: 1355px) {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    @media (max-width: 630px) {
+        padding: 25px 40px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 25px 0px;
+    }
 `;
 
 export const ToolBarFirstBlock = styled.div`

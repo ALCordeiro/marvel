@@ -16,6 +16,16 @@ export const ContainerCharactersDetails = styled.main`
     align-items: flex-start;
     background: repeat center url(${urlImg});
     min-height: 100vh;
+
+    @media (max-width: 660px) {
+        align-items: center;
+        padding: 40px;
+    }
+
+    @media (max-width: 410px) {
+        align-items: center;
+        padding: 0px;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -27,4 +37,8 @@ export const Wrapper = styled.div`
     background-color: white;
     width: 100%;
     height: 100%;
+
+    @media (max-width: 800px) {
+        align-items: center;
+    }
 `;

@@ -7,7 +7,6 @@ import Routes from './Routes';
 
 const App: React.FunctionComponent = () => (
     <BrowserRouter>
-        {/* <Characters /> */}
         <Routes />
         <GlobalStyles />
     </BrowserRouter>

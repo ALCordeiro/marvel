@@ -8,6 +8,7 @@ import {
     SEARCH_CHARACTERS_REQUEST,
     SORT_CHARACTERS_SUCCESS,
     SORT_CHARACTERS_REQUEST,
+    RESET_CHARACTERS,
 } from './types';
 
 const INITIAL_STATE: CharactersState = {
@@ -20,6 +21,8 @@ const reducer: Reducer<CharactersState> = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case LOAD_CHARACTERS_REQUEST:
             return { ...state, loading: true };
+        case RESET_CHARACTERS:
+            return { ...state, loading: false, error: false, characters: [] };
         case LOAD_CHARACTERS_SUCCESS:
             return {
                 ...state,

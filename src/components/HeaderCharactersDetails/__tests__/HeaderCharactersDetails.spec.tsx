@@ -2,15 +2,19 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import { HeaderCharactersDetailsComponent } from '../HeaderCharactersDetails';
+import store from '../../../store';
 
 let wrapper;
 
 beforeEach(() => {
     wrapper = render(
-        <Router>
-            <HeaderCharactersDetailsComponent />
-        </Router>,
+        <Provider store={store}>
+            <Router>
+                <HeaderCharactersDetailsComponent />
+            </Router>
+        </Provider>,
     );
 });
 

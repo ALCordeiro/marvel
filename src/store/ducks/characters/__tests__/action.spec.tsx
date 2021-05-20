@@ -6,6 +6,7 @@ import {
     loadFailure,
     loadRequest,
     loadSuccess,
+    resetCharacters,
     searchCharactersRequest,
     searchCharactersSuccess,
     sortCharactersRequest,
@@ -15,6 +16,7 @@ import {
     LOAD_CHARACTERS_FAILURE,
     LOAD_CHARACTERS_REQUEST,
     LOAD_CHARACTERS_SUCCESS,
+    RESET_CHARACTERS,
     SEARCH_CHARACTERS_REQUEST,
     SEARCH_CHARACTERS_SUCCESS,
     SORT_CHARACTERS_REQUEST,
@@ -97,6 +99,17 @@ test('sort success', () => {
     expect(store.dispatch(sortCharactersSuccess(characters))).toStrictEqual({
         type: SORT_CHARACTERS_SUCCESS,
         payload: characters,
+        error: undefined,
+        meta: undefined,
+    });
+});
+
+test('reset characters', () => {
+    const store = mockStore({});
+
+    expect(store.dispatch(resetCharacters())).toStrictEqual({
+        type: RESET_CHARACTERS,
+        payload: undefined,
         error: undefined,
         meta: undefined,
     });

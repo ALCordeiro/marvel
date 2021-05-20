@@ -21,6 +21,10 @@ export const TitleHeader = styled.h2`
     font-size: 38px;
     color: #202020;
     padding-bottom: 10px;
+
+    @media (max-width: 600px) {
+        text-align: center;
+    }
 `;
 
 export const SubtitleHeader = styled.h3`
@@ -28,12 +32,20 @@ export const SubtitleHeader = styled.h3`
     color: gray;
     font-weight: 400;
     padding-bottom: 50px;
+
+    @media (max-width: 600px) {
+        text-align: center;
+    }
 `;
 
 export const SearchBoxContainer = styled.div`
     position: relative;
     width: 75%;
     height: 50px;
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
 `;
 
 export const SearchBox = styled.input.attrs({
